@@ -56,6 +56,7 @@
 					</div>
 				</div>
 
+				<a class="nav-link ${empty param.menu=='person' ? 'active' : ''}" href="Person.jsp" id="startmenu">Person erfassen</a>
 			</nav>
 
 		</div>
