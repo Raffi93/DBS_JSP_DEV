@@ -47,6 +47,15 @@
 					</div>
 				</div>
 
+				<div class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle ${param.menu=='masseure' ? 'active' : ''}" href="#" id="exammenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Masseure
+					</a>
+					<div class="dropdown-menu" aria-labelledby="exammenu">
+						<a class="dropdown-item" href="index.jsp?menu=masseure">Masseurliste</a>
+					</div>
+				</div>
+
 			</nav>
 
 		</div>
