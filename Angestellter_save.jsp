@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/xml" prefix="x"%>
 
 <sql:setDataSource
         var="myDB"
@@ -13,7 +14,7 @@
 
 <fmt:parseDate value="${fn:replace(param.GEBURTSDATUM, '-', '/')}" var="parsedDateOfBirth" pattern="yyyy/MM/dd" />
 
-<form method="post" action="Person.jsp">
+<form method="post" action="Angestellter_erfassen.jsp">
     <sql:query dataSource="${myDB}" var="sozversid">
         SELECT * from Person where SVN = ${param.SVN}
     </sql:query>
@@ -27,8 +28,23 @@
             <sql:param value="${param.ADRESSE}" />
             <sql:dateParam value="${parsedDateOfBirth}" type="DATE" />
         </sql:update>
-    </c:if>
+        <c:if test ="${param.test == 1}">
 
+            <sql:update dataSource="${myDB}" var="result">
+                INSERT INTO Angestellter (SVN, BLZ, Angestelltennummer,Kontonummer) VALUES (?, ?, (SELECT MAX(Angestelltennummer) + 1 from Angestellter),?)
+                <sql:param value="${param.SVN}" />
+                <sql:param value="${param.BLZ}" />
+                <sql:param value="${param.Kontonummer}" />
+            </sql:update>
+        </c:if>
+
+        <c:if test ="${param.test == 2}">
+            <sql:update dataSource="${myDB}" var="result">
+                INSERT INTO Kunde (SVN, Kundennummer) VALUES (?, (SELECT MAX(Kundennummer) + 1 from Kunde))
+                <sql:param value="${param.SVN}" />
+            </sql:update>
+        </c:if>
+    </c:if>
 
 
     <div>
