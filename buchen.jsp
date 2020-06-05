@@ -5,22 +5,27 @@
 <sql:setDataSource
         driver="oracle.jdbc.driver.OracleDriver"
         url="jdbc:oracle:thin:@localhost:1521:xe"
-        user="user"
-        password="password"
+        user="bic4b20_06"
+        password="to0ieto0A"
 />
-
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
-<h2>Datum ausw&auml;hlen</h2>
 
-<p>Bitte w&auml;hlen Sie das Datum f&uuml;r die gew&uuml;nschte Massage aus.</p>
+
+<p>Bitte w&auml;hlen Sie den Kunden f&uuml;r welchen gebucht werden soll.</p>
 
 <form method="post" action="massage.jsp">
-    <div class="datepicker date input-group p-0 shadow-sm">
-        <input type="text" placeholder="Choose a reservation date" class="form-control" id="reservationDate">
-        <div class="input-group-append"><span class="input-group-text px-4"><i class="fa fa-calendar"></i></span></div>
-    </div>
-    <br/>
+    <select name="spezi" size="1">
+        <sql:query var="kunden"
+                   sql="select Vorname,Nachname, Kundennummer from Kunde, Person
+                         where Person.SVN = Kunde.SVN " >
+        </sql:query>
+
+        <c:forEach var="kunde" begin="0" items="${kunden.rows}">
+            <option value="${kunde.Kundennummer}">${kunde.Vorname} ${kunde.Nachname}</option>
+        </c:forEach>
+    </select>
+    <input type="date" data-date="" data-date-format="yyyy/mm/dd" name="DATUM" value="${param.DATUM}">
     <button type="submit" class="btn btn-primary">
         <span class="glyphicon glyphicon-ok"></span> Ausw&auml;hlen
     </button>
