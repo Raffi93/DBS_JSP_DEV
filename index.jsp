@@ -45,10 +45,10 @@
 
 				<!-- Kunden oder Angestellte erfassen-->
 				<div class="dropdown">
-					<a  ${param.menu=='Angestellter_erfassen' or param.menu=='Kunde_erfassen' ? 'active' : ''}" href="#" id="erfassenmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a href="#" ${param.menu=='Angestellter_erfassen' or param.menu=='Kunde_erfassen' ? 'active' : ''}">
 					Erfassen
 					</a>
-					<div class="dropdown-content" aria-labelledby="erfassenmenu">
+					<div class="dropdown-content" >
 						<a  href="index.jsp?menu=Angestellter_erfassen">Angestellter erfassen</a>
 						<a  href="index.jsp?menu=Kunde_erfassen">Kunde erfassen</a>
 					</div>
