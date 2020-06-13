@@ -26,3 +26,7 @@ body {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+.kontakt {
+    height: 60px;
+}

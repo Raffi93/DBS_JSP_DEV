@@ -54,7 +54,7 @@
 			</nav>
 		</div>
 	</header>
-	<main role="main" class="inner cover">
+	<main >
 		<c:if test="${!empty param.menu}">
 			<jsp:include page="${param.menu}.jsp" />
 		</c:if>
@@ -63,11 +63,11 @@
 		</c:if>
 	</main>
 
-	<footer class="mastfoot mt-auto text-center">
-		<div class="inner">
-			<p><a href="mailto:wbt@dedisys.org" class="nav-link">
+	<footer>
+		<div >
+			<p><a href="#">
 				Kontaktieren Sie uns:
-				<img class="rounded img-responsive mastfoot-img" src="images/email.jpg" alt="contact us" title="contact us" />
+				<img class="kontakt" src="images/email.jpg" title="contact us" />
 			</a>
 			</p>
 		</div>
