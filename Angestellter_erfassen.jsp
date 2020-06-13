@@ -15,7 +15,7 @@
 
 <form method="post" action="index.jsp">
     <div>
-        <input type="hidden" name="menu" value="Angestellter_save" />
+        <input type="hidden" name="menu" value="Angestellter_save"/>
         <input type="hidden" name="test" value="1" />
 
         <table width="600">

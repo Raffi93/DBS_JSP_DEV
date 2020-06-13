@@ -14,7 +14,7 @@
 
 <fmt:parseDate value="${fn:replace(param.GEBURTSDATUM, '-', '/')}" var="parsedDateOfBirth" pattern="yyyy/MM/dd" />
 
-<form method="post" action="Angestellter_erfassen.jsp">
+
     <sql:query dataSource="${myDB}" var="sozversid">
         SELECT * from Person where SVN = ${param.SVN}
     </sql:query>
@@ -102,5 +102,5 @@
 
         <input type="submit" value="OK" />
     </div>
-</form>
+
 
