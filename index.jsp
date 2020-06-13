@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 	<meta name="description" content="">
-	<meta name="author" content="Raffael Baar, Simon Schlicker, Erik Schaffer, Markus Serloth">
+	<meta name="author" content="Raffael Baar, Simon Schlicker, Erik Schaffer, Markus Serloth ">
 
 	<title>Massage</title>
 
