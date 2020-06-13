@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <sql:setDataSource
+        var="myDB"
         driver="oracle.jdbc.driver.OracleDriver"
         url="jdbc:oracle:thin:@localhost:1521:xe"
         user="bic4b20_06"
@@ -44,3 +45,13 @@
     </div>
 </form>
 <div style="position: fixed; text-align: lef; bottom: 0px; width: 100%;"><a href="index.jsp">Back</a> to Start</div>
+
+<sql:query dataSource="${myDB}" var="Kunden"
+           sql="select max(Kundennummer) as test from Kunde" >
+</sql:query>
+
+<c:forEach var="kunde" begin="0" items="${Kunden.rows}">
+    <p >${kunde.test}</p>
+</c:forEach>
+
+

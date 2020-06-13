@@ -63,6 +63,10 @@
         <table width="600">
 
             <tr>
+                <td>SVN</td>
+                <td>${param.SVN}</td>
+            </tr>
+            <tr>
                 <td>Vorname</td>
                 <td>${param.VORNAME}</td>
             </tr>
@@ -78,10 +82,35 @@
                 <td>Date</td>
                 <td>${param.GEBURTSDATUM}</td>
             </tr>
+            <c:if test ="${param.test == 1}">
+            <sql:query dataSource="${myDB}" var="Angestellte"
+                       sql="select max(Angestelltennummer) as test from Angestellter" >
+            </sql:query>
             <tr>
-                <td>SVN</td>
-                <td>${param.SVN}</td>
+                <td>Angestelltennummer</td>
+                <c:forEach var="Angestellter" begin="0" items="${Angestellte.rows}">
+                <td >${Angestellter.test}</td>
+                </c:forEach>
+            <tr>
+                <td>Lizenznummer</td>
+                <td>${param.Lizenznummer}</td>
             </tr>
+            <tr>
+                <td>Qualifikation</td>
+                <td>${param.spezi}</td>
+            </tr>
+            </c:if>
+            <c:if test ="${param.test == 2}">
+            <sql:query dataSource="${myDB}" var="Kunden"
+                       sql="select max(Kundennummer) as test from Kunde" >
+            </sql:query>
+                <tr>
+                <td>Kundennummer</td>
+                    <c:forEach var="kunde" begin="0" items="${Kunden.rows}">
+                    <td >${kunde.test}</td>
+                </c:forEach>
+                </tr>
+            </c:if>
             <tr>
                 <td>Ergebnis:</td>
                 <td>
