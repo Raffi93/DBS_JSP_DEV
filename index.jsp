@@ -22,13 +22,13 @@
 </head>
 
 <body>
-<div class="cover-container d-flex align-items-center h-100 p-5 mx-auto flex-column">
-	<header class="masthead"><!-- mb-auto -->
-		<div class="inner">
-			<h3 class="masthead-brand">Massage Studio zur heilenden Hand</h3>
-			<img class="rounded float-right img-responsive masthead-img" src="images/logo.jpg" alt="logo" title="logo" height="60" style="margin-left: 2rem"/>
+<div >
+	<header>
+		<div>
+			<h3 >Massage Studio zur heilenden Hand</h3>
+			<img  src="images/logo.jpg" alt="logo" title="logo" height="60" style="margin-left: 2rem"/>
 
-			<nav class="nav navbar-static-top nav-masthead justify-content-center">
+			<nav>
 				<a  href="index.jsp" id="startmenu">Startseite</a>
 
 				<!-- massage buchen-->
