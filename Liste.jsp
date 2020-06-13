@@ -12,23 +12,27 @@
 <h2> Liste aller Mitarbeiter oder Kunden</h2>
 
 
-<form method="post" action="Liste_anzeigen.jsp">
-    <input type="hidden" name="menu" value="Liste_anzeigen.jsp" />
+<form method="post" action="index.jsp">
+    <input type="hidden" name="menu" value="Liste_anzeigen" />
     <input type="hidden" name="Auswahl" value="Kunde" />
 
     Ergebnisse f&uuml;r
 
-    <button type="submit" class="btn btn-primary">
-        <span class="glyphicon glyphicon-search"></span> Kunden
-    </button>
+    <button type="submit">Kunden</button>
 </form>
 
-<form method="post" action="Liste_anzeigen.jsp">
-    <input type="hidden" name="menu" value="Liste_anzeigen.jsp" />
+<form method="post" action="index.jsp">
+    <input type="hidden" name="menu" value="Liste_anzeigen" />
     <input type="hidden" name="Auswahl" value="Angestellter" />
 
     Ergebnisse f&uuml;r
-<button type="submit" class="btn btn-primary">
-    <span class="glyphicon glyphicon-search"></span> Mitarbeiter
-</button>
+    <button type="submit">Mitarbeiter</button>
+</form>
+
+<form method="post" action="index.jsp">
+    <input type="hidden" name="menu" value="Liste_anzeigen" />
+    <input type="hidden" name="Auswahl" value="Vormerkungen" />
+
+    Ergebnisse f&uuml;r
+    <button type="submit">Vormerkungen</button>
 </form>

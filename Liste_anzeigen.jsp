@@ -60,5 +60,40 @@
     </table>
 </c:if>
 
+<c:if test ="${param.Auswahl eq 'Vormerkungen' }">
+    <table class ="table table-striped table-responsive text-center">
+        <thead class ="thead-light">
+        <tr>
+            <th scope ="col"> Datum</th>
+            <th scope ="col"> Uhrzeit</th>
+            <th scope ="col"> Masseur</th>
+            <th scope ="col"> Massagetyp</th>
+            <th scope ="col"> Kunde</th>
+            <th scope ="col"> Raumnummer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <sql:query var="vormerkungen1"
+                   sql="select y.Vorname as KVorname,y.Nachname as KNachname, x.Nachname as ANachanme , x.Vorname as AVorname, Datum,Uhrzeit,Massagetyp.Beschreibung,Raumkodierung from Vormerkung join Kunde on Kunde.Kundennummer = Vormerkung.Kundennummer
+                        join Person y on Kunde.SVN= y.SVN
+                        join Masseur on Vormerkung.Lizenznummer = Masseur.Lizenznummer
+                        join Angestellter on Angestellter.Angestelltennummer = Masseur.Angestelltennummer
+                        join Person x on Angestellter.SVN = x.SVN
+                        join Massagetyp on Massagetyp.Identifikation = Vormerkung.Identifikation" >
+        </sql:query>
+
+        <c:forEach var="vormerkung" varStatus="status" begin = "0" items="${vormerkungen1.rows}">
+            <tr>
+                <td>${vormerkung.Datum}</td>
+                <td>${vormerkung.Uhrzeit}</td>
+                <td>${vormerkung.AVorname} ${vormerkung.ANachanme}</td>
+                <td>${vormerkung.Beschreibung}</td>
+                <td>${vormerkung.KVorname} ${vormerkung.KNachname}</td>
+                <td>${vormerkung.Raumkodierung}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</c:if>
 
 <p>${param.Auswahl}</p>
