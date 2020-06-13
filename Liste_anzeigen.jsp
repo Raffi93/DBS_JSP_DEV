@@ -11,7 +11,7 @@
 
 <h2> Liste aller Mitarbeiter oder Kunden</h2>
 <c:if test ="${param.Auswahl eq 'Kunde' }">
-<table >
+<table>
     <thead >
         <tr>
             <th scope ="col"> Kundennummer</th>

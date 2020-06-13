@@ -10,7 +10,9 @@
         password="to0ieto0A"
 />
 
-<form method="post" action="Time.jsp">
+<form method="post" action="index.jsp">
+    <input type="hidden" name="menu" value="Time"/>
+
     <select name="masseur" size="1">
         <sql:query var="test"
                    sql="select Vorname,Nachname, Lizenznummer from Masseur, Person, Angestellter, Massagetyp

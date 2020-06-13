@@ -29,7 +29,8 @@
 
 
     <c:forEach var="massage" varStatus="status" begin = "0" items="${massagen.rows}">
-        <form method="post" action="vormerkung.jsp">
+        <form method="post" action="index.jsp">
+            <input type="hidden" name="menu" value="vormerkung"/>
 
             <input type="hidden" name="Date" value="${param.DATUM}"/>
             <input type="hidden" name="Kundennummer" value="${param.spezi}"/>

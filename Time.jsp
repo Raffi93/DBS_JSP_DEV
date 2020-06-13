@@ -11,7 +11,9 @@
 />
 
 <h2>Bitte w&auml;hlen sie einen Massageblock aus!</h2>
-<form method="post" action="vormerkung_save.jsp">
+<form method="post" action="index.jsp">
+<input type="hidden" name="menu" value="vormerkung_save"/>
+
 <table>
     <thead>
     <tr>
