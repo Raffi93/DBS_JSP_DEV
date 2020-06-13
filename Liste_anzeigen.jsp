@@ -11,8 +11,8 @@
 
 <h2> Liste aller Mitarbeiter oder Kunden</h2>
 <c:if test ="${param.Auswahl eq 'Kunde' }">
-<table class ="table table-striped table-responsive text-center">
-    <thead class ="thead-light">
+<table >
+    <thead >
         <tr>
             <th scope ="col"> Kundennummer</th>
             <th scope ="col"> Vorname</th>
@@ -36,8 +36,8 @@
     </c:if>
 
 <c:if test ="${param.Auswahl eq 'Angestellter' }">
-    <table class ="table table-striped table-responsive text-center">
-        <thead class ="thead-light">
+    <table >
+        <thead>
         <tr>
             <th scope ="col"> Angestelltennummer</th>
             <th scope ="col"> Vorname</th>

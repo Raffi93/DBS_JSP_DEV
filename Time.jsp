@@ -12,8 +12,8 @@
 
 <h2>Bitte w&auml;hlen sie einen Massageblock aus!</h2>
 <form method="post" action="vormerkung_save.jsp">
-<table class ="table table-striped table-responsive text-center">
-    <thead class ="thead-light">
+<table>
+    <thead>
     <tr>
         <th scope ="col"> Uhrzeit</th>
         <th scope ="col"> Raum</th>

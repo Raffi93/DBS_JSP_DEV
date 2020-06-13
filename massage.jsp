@@ -14,8 +14,8 @@
 
 
 
-<table class ="table table-striped table-responsive text-center">
-    <thead class ="thead-light">
+<table>
+    <thead>
     <tr>
         <th scope ="col"> Beschreibung</th>
         <th scope ="col"> Kosten</th>

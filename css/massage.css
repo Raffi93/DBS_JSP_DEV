@@ -30,3 +30,22 @@ body {
 .kontakt {
     height: 60px;
 }
+
+
+.col-container {
+    display: table;
+    width: 100%;
+}
+.col {
+    display: table-cell;
+    padding: 16px;
+}
+
+.liste{
+   border: 1px solid black;
+
+}
+
+table,th,td {
+    border: 1px solid black;
+}
