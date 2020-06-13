@@ -12,16 +12,16 @@
 
 <div style="text-align: center; width: 100%;"><h2>Person erfassen</h2></div>
 
-<form method="post" action="Angestellter_save.jsp">
+<form method="post" action="index.jsp">
     <div>
-        <input type="hidden" name="menu" value="person" />
+        <input type="hidden" name="menu" value="Angestellter_save" />
         <input type="hidden" name="test" value="1" />
 
         <table width="600">
 
             <tr>
                 <td>SVN</td>
-                <td><input type="number" name="SVN" max="9999999999" value="${param.SVN}" size="10"></td>
+                <td><input type="number" name="SVN" max="9999999999" min="1111111111" value="${param.SVN}" size="10"></td>
             </tr>
             <tr>
                 <td>Nachname</td>
