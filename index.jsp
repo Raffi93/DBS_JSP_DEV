@@ -47,7 +47,7 @@
 				<div class="dropdown">
 					<a href="#">Erfassen</a>
 					<div class="dropdown-content" >
-						<a  href="index.jsp?menu=Angestellter_erfassen">Angestellter erfassen</a>
+						<a  href="index.jsp?menu=Angestellter_erfassen">Masseur erfassen</a>
 						<a  href="index.jsp?menu=Kunde_erfassen">Kunde erfassen</a>
 					</div>
 				</div>

@@ -10,7 +10,8 @@
 />
 
 
-<div style="text-align: center; width: 100%;"><h2>Person erfassen</h2></div>
+
+<div style="text-align: center; width: 100%;"><h2>Masseur erfassen</h2></div>
 
 <form method="post" action="index.jsp">
     <div>
@@ -41,15 +42,45 @@
             </tr>
 
             <tr>
-                <td>BLZ</td>
-                <td><input type="number"  name="BLZ" value="${param.BLZ}"></td>
+                <td>Bank</td>
+                <td>
+                    <select name="BLZ" size="1">
+                        <sql:query var="Banken"
+                                   sql="select BLZ,Bankname from Bank" >
+                        </sql:query>
+
+                        <c:forEach var="Bank" begin="0" items="${Banken.rows}">
+                            <option value="${Bank.BLZ}">${Bank.Bankname}</option>
+                        </c:forEach>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td>Kontonummer</td>
-                <td><input type="number"  name="Kontonummer" value="${param.Kontonummer}"></td>
+                <td><input type="number" max="99999999999" min="11111111111" name="Kontonummer" value="${param.Kontonummer}"></td>
             </tr>
+            <tr>
+                <td>Qualifikation</td>
+                <td>
+                    <select name="spezi" size="1">
+                        <sql:query var="qualifikationen"
+                                   sql="select Beschreibung from massagetyp" >
+                        </sql:query>
 
-
+                        <c:forEach var="quali" begin="0" items="${qualifikationen.rows}">
+                            <option value="${quali.Beschreibung}">${quali.Beschreibung}</option>
+                        </c:forEach>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Lizenznummer</td>
+                <td><input type="number"  max="999999" min="111111" name="Lizenznummer" value="${param.Lizenznummer}"></td>
+            </tr>
+            <tr>
+                <td>Ausbildungszeit</td>
+                <td><input type="number"  name="Ausbildungszeit" value="${param.Ausbildungszeit}"></td>
+            </tr>
         </table>
 
         <input type="submit" value="Angestellten erfassen" />

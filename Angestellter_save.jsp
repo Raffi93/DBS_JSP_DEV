@@ -28,6 +28,7 @@
             <sql:param value="${param.ADRESSE}" />
             <sql:dateParam value="${parsedDateOfBirth}" type="DATE" />
         </sql:update>
+
         <c:if test ="${param.test == 1}">
 
             <sql:update dataSource="${myDB}" var="result">
@@ -35,6 +36,15 @@
                 <sql:param value="${param.SVN}" />
                 <sql:param value="${param.BLZ}" />
                 <sql:param value="${param.Kontonummer}" />
+            </sql:update>
+
+
+
+            <sql:update dataSource="${myDB}" var="result">
+                INSERT INTO Masseur (LIZENZNUMMER, ANGESTELLTENNUMMER, QUALIFIKATION,AUSBILDUNGSZEIT) VALUES (?, (SELECT MAX(Angestelltennummer) from Angestellter),?,?)
+                <sql:param value="${param.Lizenznummer}" />
+                <sql:param value="${param.spezi}" />
+                <sql:param value="${param.Ausbildungszeit}" />
             </sql:update>
         </c:if>
 
