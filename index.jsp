@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
 
 	<!-- Custom styles for this template -->
+	<!--<link href="css/uni.css" rel="stylesheet">-->
 	<link href="css/massage.css" rel="stylesheet">
 </head>
 
@@ -29,36 +30,30 @@
 
 			<nav class="nav navbar-static-top nav-masthead justify-content-center">
 				<a class="nav-link ${empty param.menu ? 'active' : ''}" href="index.jsp" id="startmenu">Startseite</a>
-				<div class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle ${param.menu=='buchen' ? 'active' : ''}" href="#" id="exammenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Massage buchen
-					</a>
-					<div class="dropdown-menu" aria-labelledby="exammenu">
-						<a class="dropdown-item" href="index.jsp?menu=buchen">Massage buchen</a>
-					</div>
-				</div>
-				<div class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle ${param.menu=='buch_suchen' or param.menu=='buch_ausleihen' ? 'active' : ''}" href="#" id="bookmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						B&uuml;cher
-					</a>
-					<div class="dropdown-menu" aria-labelledby="bookmenu">
-						<a class="dropdown-item" href="index.jsp?menu=buch_suchen">Buch suchen</a>
-						<a class="dropdown-item" href="index.jsp?menu=buch_ausleihen">Ausgeliehene B&uuml;cher anzeigen</a>
-					</div>
-				</div>
 
-				<div class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle ${param.menu=='masseure' ? 'active' : ''}" href="#" id="exammenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Masseure
+				<!-- massage buchen-->
+				<a class="nav-link ${empty param.menu=='buchen' ? 'active' : ''}" href="index.jsp?menu=buchen" id="buchungsmenu">Massage buchen</a>
+
+				<!-- B?cherliste ausgeliehen-->
+				<a class="nav-link ${empty param.menu=='buch_ausleihen' ? 'active' : ''}" href="index.jsp?menu=ausgeliehene_buecher" id="bookmenu">Ausleihe</a>
+
+				<!-- Masseurliste -->
+				<a class="nav-link ${empty param.menu=='masseure' ? 'active' : ''}" href="index.jsp?menu=masseure" id="masseurmenu">Masseure</a>
+
+				<!-- Auflistung Angestellte Kunden Vormerkung-->
+				<a class="nav-link ${empty param.menu=='liste' ? 'active' : ''}" href="index.jsp?menu=Liste" id="listemenu">Auflistung</a>
+
+				<!-- Kunden oder Angestellte erfassen-->
+				<div class="dropdown">
+					<a  ${param.menu=='Angestellter_erfassen' or param.menu=='Kunde_erfassen' ? 'active' : ''}" href="#" id="erfassenmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Erfassen
 					</a>
-					<div class="dropdown-menu" aria-labelledby="exammenu">
-						<a class="dropdown-item" href="index.jsp?menu=masseure">Masseurliste</a>
+					<div class="dropdown-content" aria-labelledby="erfassenmenu">
+						<a  href="index.jsp?menu=Angestellter_erfassen">Angestellter erfassen</a>
+						<a  href="index.jsp?menu=Kunde_erfassen">Kunde erfassen</a>
 					</div>
 				</div>
-
-				<a class="nav-link ${empty param.menu=='person' ? 'active' : ''}" href="Person.jsp" id="startmenu">Person erfassen</a>
 			</nav>
-
 		</div>
 	</header>
 	<main role="main" class="inner cover">
