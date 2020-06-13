@@ -21,6 +21,7 @@
         <th scope ="col"> Raum</th>
         <th scope ="col"> Massageart</th>
         <th scope ="col"> Massageart</th>
+        <th/>
     </tr>
     </thead>
     <tbody>
@@ -45,9 +46,7 @@
                 <td>${massage.Raumkodierung}</td>
                 <td>${massage.Beschreibung}</td>
                 <td>${massage.Identifikation}</td>
-                <td> <button type="submit" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-search"></span> Buchen
-                </button></td>
+                <td> <button >Buchen</button></td>
             </tr>
         </form>
     </c:forEach>
