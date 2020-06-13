@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 	<meta name="description" content="">
-	<meta name="author" content="Raffael Baar, Simon Schlicker, Erik Schaffer, Markus Serloth ">
+	<meta name="author" content="Raffael Baar, Simon Schlicker, Erik Schaffer, Markus Serloth">
 
 	<title>Massage</title>
 
@@ -29,25 +29,23 @@
 			<img class="rounded float-right img-responsive masthead-img" src="images/logo.jpg" alt="logo" title="logo" height="60" style="margin-left: 2rem"/>
 
 			<nav class="nav navbar-static-top nav-masthead justify-content-center">
-				<a class="nav-link ${empty param.menu ? 'active' : ''}" href="index.jsp" id="startmenu">Startseite</a>
+				<a  href="index.jsp" id="startmenu">Startseite</a>
 
 				<!-- massage buchen-->
-				<a class="nav-link ${empty param.menu=='buchen' ? 'active' : ''}" href="index.jsp?menu=buchen" id="buchungsmenu">Massage buchen</a>
+				<a  href="index.jsp?menu=buchen" id="buchungsmenu">Massage buchen</a>
 
 				<!-- B?cherliste ausgeliehen-->
-				<a class="nav-link ${empty param.menu=='buch_ausleihen' ? 'active' : ''}" href="index.jsp?menu=ausgeliehene_buecher" id="bookmenu">Ausleihe</a>
+				<a  href="index.jsp?menu=ausgeliehene_buecher" id="bookmenu">Ausleihe</a>
 
 				<!-- Masseurliste -->
-				<a class="nav-link ${empty param.menu=='masseure' ? 'active' : ''}" href="index.jsp?menu=masseure" id="masseurmenu">Masseure</a>
+				<a href="index.jsp?menu=masseure" id="masseurmenu">Masseure</a>
 
 				<!-- Auflistung Angestellte Kunden Vormerkung-->
-				<a class="nav-link ${empty param.menu=='liste' ? 'active' : ''}" href="index.jsp?menu=Liste" id="listemenu">Auflistung</a>
+				<a  href="index.jsp?menu=Liste" id="listemenu">Auflistung</a>
 
 				<!-- Kunden oder Angestellte erfassen-->
 				<div class="dropdown">
-					<a href="#" ${param.menu=='Angestellter_erfassen' or param.menu=='Kunde_erfassen' ? 'active' : ''}">
-					Erfassen
-					</a>
+					<a href="#">Erfassen</a>
 					<div class="dropdown-content" >
 						<a  href="index.jsp?menu=Angestellter_erfassen">Angestellter erfassen</a>
 						<a  href="index.jsp?menu=Kunde_erfassen">Kunde erfassen</a>
