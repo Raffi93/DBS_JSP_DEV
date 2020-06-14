@@ -56,20 +56,10 @@
             <td>Ergebnis:</td>
             <td>
                 <c:if test="${result>=1}">
-                    <font color='green'>OK</font>
-                </c:if>
-                <c:if test="${sozversid.rowCount gt 0}">
-                    <font color='red'>Sozialversicherungsnummer bereits vergeben</font>
-                    <input type="hidden" name="VORNAME" value="${param.VORNAME}" >
-                    <input type="hidden" name="NACHNAME" value="${param.NACHNAME}" >
-                    <input type="hidden" name="ADRESSE" value="${param.ADRESSE}" >
-                    <input type="hidden" name="DATE" value="${param.GEBURTSDATUM}" >
-                    <input type="hidden" name="SVN" value="${param.SVN}" >
+                    <font color='green'>Gespeichert</font>
                 </c:if>
             </td>
         </tr>
     </table>
-
-    <input type="submit" value="OK" />
 </div>
 </form>

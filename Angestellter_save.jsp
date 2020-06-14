@@ -19,7 +19,11 @@
         SELECT * from Person where SVN = ${param.SVN}
     </sql:query>
 
-    <c:if test="${sozversid.rowCount le 0}">
+    <sql:query dataSource="${myDB}" var="lizenznr">
+        SELECT * from Person where SVN = ${param.Lizenznummer}
+    </sql:query>
+
+    <c:if test="${sozversid.rowCount le 0 and lizenznr.rowCount le 0 or sozversid.rowCount le 0 and param.test == 2}">
         <sql:update dataSource="${myDB}" var="result">
             INSERT INTO Person (SVN, Nachname, Vorname, Adresse, Geburtsdatum) VALUES (?, ?, ?, ?, ?)
             <sql:param value="${param.SVN}" />
@@ -115,21 +119,14 @@
                 <td>Ergebnis:</td>
                 <td>
                     <c:if test="${result>=1}">
-                        <font color='green'>OK</font>
+                        <font color='green'>Gespeichert</font>
                     </c:if>
-                    <c:if test="${sozversid.rowCount gt 0}">
-                        <font color='red'>Sozialversicherungsnummer bereits vergeben</font>
-                        <input type="hidden" name="VORNAME" value="${param.VORNAME}" >
-                        <input type="hidden" name="NACHNAME" value="${param.NACHNAME}" >
-                        <input type="hidden" name="ADRESSE" value="${param.ADRESSE}" >
-                        <input type="hidden" name="DATE" value="${param.GEBURTSDATUM}" >
-                        <input type="hidden" name="SVN" value="${param.SVN}" >
+                    <c:if test="${lizenznr.rowCount gt 0}">
+                        <font color='red'>Lizenznummer bereits vergeben</font>
                     </c:if>
                 </td>
             </tr>
         </table>
-
-        <input type="submit" value="OK" />
     </div>
 
 
