@@ -1,5 +1,4 @@
 body {
-    background-color: lightblue;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -17,7 +16,6 @@ body {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
     z-index: 1;
@@ -41,7 +39,6 @@ body {
     padding: 16px;
 }
 
-/* Table designt*/
 table,th,td {
     border: 1px solid black;
     border-collapse: collapse;
@@ -49,12 +46,15 @@ table,th,td {
 table{
     width: 100%;
 }
+
 th, td {
     text-align: center;
 }
+
 table tr:nth-child(even) {
     background-color: #eee;
 }
+
 table tr:nth-child(odd) {
     background-color: #fff;
 }
@@ -65,7 +65,7 @@ table th {
 }
 /*table design end*/
 
-/*Button design*/
+
 button {
     background-color: white;
     color: black;
@@ -76,4 +76,85 @@ button:hover{
     background-color: #4CAF50;
     color: white;
 }
-/*button design end*/
+
+nav{
+    border:1px solid #ccc;
+    border-width:1px 0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+.nav li{
+    display:inline;
+}
+.nav a{
+    display:inline-block;
+    padding:10px;
+}
+
+.table-in input {
+    width: 100%;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
+}
+
+.table-in select {
+    width: 100%;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
+}
+
+.table-in, .tr-in, .td-in {
+    border: none;
+}
+
+.table-in tr {
+    border: none;
+}
+
+.table-in tr td {
+    border: none;
+    text-align: unset;
+}
+
+.table-in tr:nth-child(even) {
+    background-color: #fff;
+}
+
+.table-in tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+footer {
+    position: fixed;
+    padding: 10px;
+    bottom: 0;
+    left: 50%;
+}
+
+.head {
+    position: fixed;
+    padding: 10px;
+    top: 0;
+    left: 50%;
+}
+
+li a:link, li a:visited {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+li a:hover, a:active {
+    background-color: green;
+}
+
+ul {
+    margin-bottom: 2.5rem
+}
