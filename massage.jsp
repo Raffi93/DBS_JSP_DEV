@@ -10,7 +10,7 @@
         password="to0ieto0A"
 />
 
-<h2>Bitte w&auml;hlen sie einen Massagetyp aus !</h2>
+<div style="text-align:center; width: 100%;"><h2>Bitte w&auml;hlen sie einen Massagetyp aus !</h2></div>
 
 
 
@@ -46,4 +46,4 @@
     </c:forEach>
     </tbody>
 </table>
-<p>${parsedDate}     blub  ${param.DATUM}   </p>
+

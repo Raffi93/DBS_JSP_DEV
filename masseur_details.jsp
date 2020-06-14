@@ -9,27 +9,29 @@
         password="to0ieto0A"
 />
 
-<h2>Der Masseur ist auf jene Koerperbereiche spezialisiert: </h2>
+<div style="text-align:center; width: 100%;">
+    <h2>Der Masseur ist auf jene K&ouml;rperbereiche spezialisiert: </h2>
 
-<c:if test="${empty param.spezi}">
-    Es wurde kein Masseur ausgew&auml;hlt!
-</c:if>
+    <c:if test="${empty param.spezi}">
+        Es wurde kein Masseur ausgew&auml;hlt!
+    </c:if>
 
-<c:if test="${!empty param.spezi}">
+    <c:if test="${!empty param.spezi}">
         <sql:query var="masseure"
-           sql="select Vorname, Nachname, Qualifikation
-	  		from Masseur, Person, Angestellter
-		  	where Angestellter.Angestelltennummer = Masseur.Angestelltennummer and Person.SVN = Angestellter.SVN and Vorname = ?" >
-              <sql:param value="${param.spezi}" />
+                   sql="select Vorname, Nachname, Qualifikation
+    	  		from Masseur, Person, Angestellter
+    		  	where Angestellter.Angestelltennummer = Masseur.Angestelltennummer and Person.SVN = Angestellter.SVN and Lizenznummer = ?" >
+            <sql:param value="${param.spezi}" />
         </sql:query>
 
         <c:forEach var="masseur" begin="0" items="${masseure.rows}">
-             <p>Spezialisierung des Masseurs <b>${masseur.Vorname} ${masseur.Nachname}</b>:
-             <b>${masseur.Qualifikation}</b>.</p>
+            <p>Spezialisierung des Masseurs <b>${masseur.Vorname} ${masseur.Nachname}</b>:
+                <b>${masseur.Qualifikation}</b>.</p>
 
 
 
-    </c:forEach>
-</c:if>
+        </c:forEach>
+    </c:if>
 
-<br /><a href="index.jsp?menu=masseure">Zur&uuml;ck zur Auswahl</a>
+    <br /><a href="index.jsp?menu=masseure">Zur&uuml;ck zur Auswahl</a>
+</div>

@@ -10,30 +10,30 @@
 />
 
 
-<div style="text-align: center; width: 100%;"><h2>Person erfassen</h2></div>
+<div style="text-align: center; width: 100%;"><h2>Kunde erfassen</h2></div>
 
 <form method="post" action="index.jsp">
     <div>
         <input type="hidden" name="menu" value="Angestellter_save"/>
         <input type="hidden" name="test" value="2" />
 
-        <table width="600">
+        <table class="table-in">
 
             <tr>
                 <td>SVN</td>
-                <td><input type="number" name="SVN" max="9999999999" value="${param.SVN}" size="10" required></td>
+                <td><input type="number" name="SVN" max="9999999999" value="${param.SVN}" required></td>
             </tr>
             <tr>
                 <td>Nachname</td>
-                <td><input type="text" name="NACHNAME" maxlength="80" value="${param.NACHNAME}" size="20" required></td>
+                <td><input type="text" name="NACHNAME" maxlength="80" value="${param.NACHNAME}" required></td>
             </tr>
             <tr>
                 <td>Vorname</td>
-                <td><input type="text" name="VORNAME" maxlength="80" value="${param.VORNAME}" size="20" required></td>
+                <td><input type="text" name="VORNAME" maxlength="80" value="${param.VORNAME}" required></td>
             </tr>
             <tr>
                 <td>Adresse</td>
-                <td><input type="text" name="ADRESSE" maxlength="512" value="${param.ADRESSE}" size="80" required></td>
+                <td><input type="text" name="ADRESSE" maxlength="512" value="${param.ADRESSE}" required></td>
             </tr>
             <tr>
                 <td>Geburtsdatum</td>
@@ -44,7 +44,6 @@
 
         </table>
 
-        <input type="submit" value="Angestellten erfassen" />
+        <input style="float:right;margin-top:1rem;" type="submit" value="Angestellten erfassen" />
     </div>
 </form>
-<div style="position: fixed; text-align: lef; bottom: 0px; width: 100%;"><a href="index.jsp">Back</a> to Start</div>

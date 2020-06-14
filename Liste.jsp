@@ -9,30 +9,30 @@
         password="to0ieto0A"
 />
 
-<h2> Liste aller Mitarbeiter oder Kunden</h2>
+<div style="text-align:center; width: 100%;">
+    <h2> Liste aller Mitarbeiter, Kunden oder Vormerkungen</h2>
+    <form method="post" action="index.jsp">
+        <input type="hidden" name="menu" value="Liste_anzeigen" />
+        <input type="hidden" name="Auswahl" value="Kunde" />
 
+        Ergebnisse f&uuml;r
 
-<form method="post" action="index.jsp">
-    <input type="hidden" name="menu" value="Liste_anzeigen" />
-    <input type="hidden" name="Auswahl" value="Kunde" />
+        <button type="submit">Kunden</button>
+    </form>
 
-    Ergebnisse f&uuml;r
+    <form method="post" action="index.jsp">
+        <input type="hidden" name="menu" value="Liste_anzeigen" />
+        <input type="hidden" name="Auswahl" value="Angestellter" />
 
-    <button type="submit">Kunden</button>
-</form>
+        Ergebnisse f&uuml;r
+        <button type="submit">Mitarbeiter</button>
+    </form>
 
-<form method="post" action="index.jsp">
-    <input type="hidden" name="menu" value="Liste_anzeigen" />
-    <input type="hidden" name="Auswahl" value="Angestellter" />
+    <form method="post" action="index.jsp">
+        <input type="hidden" name="menu" value="Liste_anzeigen" />
+        <input type="hidden" name="Auswahl" value="Vormerkungen" />
 
-    Ergebnisse f&uuml;r
-    <button type="submit">Mitarbeiter</button>
-</form>
-
-<form method="post" action="index.jsp">
-    <input type="hidden" name="menu" value="Liste_anzeigen" />
-    <input type="hidden" name="Auswahl" value="Vormerkungen" />
-
-    Ergebnisse f&uuml;r
-    <button type="submit">Vormerkungen</button>
-</form>
+        Ergebnisse f&uuml;r
+        <button type="submit">Vormerkungen</button>
+    </form>
+</div>

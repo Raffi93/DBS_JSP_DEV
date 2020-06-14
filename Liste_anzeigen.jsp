@@ -9,31 +9,32 @@
         password="to0ieto0A"
 />
 
-<h2> Liste aller Mitarbeiter oder Kunden</h2>
+<div style="text-align:center; width: 100%;"><h2> Liste aller Mitarbeiter, Kunden oder Vormerkungen</h2></div>
+
 <c:if test ="${param.Auswahl eq 'Kunde' }">
-<table>
-    <thead >
+    <table>
+        <thead >
         <tr>
             <th scope ="col"> Kundennummer</th>
             <th scope ="col"> Vorname</th>
             <th scope ="col"> Nachname</th>
         </tr>
-    </thead>
-<tbody>
-<sql:query var="Kunden"
-           sql="select Kundennummer, Vorname ,Nachname from Kunde join Person on Kunde.SVN = Person.SVN order by Kundennummer" >
-</sql:query>
+        </thead>
+        <tbody>
+        <sql:query var="Kunden"
+                   sql="select Kundennummer, Vorname ,Nachname from Kunde join Person on Kunde.SVN = Person.SVN order by Kundennummer" >
+        </sql:query>
 
-<c:forEach var="Kunden" varStatus="status" begin = "0" items="${Kunden.rows}">
- <tr>
-     <td>${Kunden.Kundennummer}</td>
-     <td>${Kunden.Vorname}</td>
-     <td>${Kunden.Nachname}</td>
- </tr>
-</c:forEach>
-</tbody>
-</table>
-    </c:if>
+        <c:forEach var="Kunden" varStatus="status" begin = "0" items="${Kunden.rows}">
+            <tr>
+                <td>${Kunden.Kundennummer}</td>
+                <td>${Kunden.Vorname}</td>
+                <td>${Kunden.Nachname}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</c:if>
 
 <c:if test ="${param.Auswahl eq 'Angestellter' }">
     <table >
@@ -74,7 +75,7 @@
         </thead>
         <tbody>
         <sql:query var="vormerkungen1"
-                   sql="select y.Vorname as KVorname,y.Nachname as KNachname, x.Nachname as ANachanme , x.Vorname as AVorname, Datum,Uhrzeit,Massagetyp.Beschreibung,Raumkodierung from Vormerkung join Kunde on Kunde.Kundennummer = Vormerkung.Kundennummer
+                   sql="select y.Vorname as KVorname,y.Nachname as KNachname, x.Nachname as ANachanme , x.Vorname as AVorname, TO_CHAR(Datum, 'DD.MM.YYYY') AS DatumPretty,Uhrzeit,Massagetyp.Beschreibung,Raumkodierung from Vormerkung join Kunde on Kunde.Kundennummer = Vormerkung.Kundennummer
                         join Person y on Kunde.SVN= y.SVN
                         join Masseur on Vormerkung.Lizenznummer = Masseur.Lizenznummer
                         join Angestellter on Angestellter.Angestelltennummer = Masseur.Angestelltennummer
@@ -84,7 +85,7 @@
 
         <c:forEach var="vormerkung" varStatus="status" begin = "0" items="${vormerkungen1.rows}">
             <tr>
-                <td>${vormerkung.Datum}</td>
+                <td>${vormerkung.DatumPretty}</td>
                 <td>${vormerkung.Uhrzeit}</td>
                 <td>${vormerkung.AVorname} ${vormerkung.ANachanme}</td>
                 <td>${vormerkung.Beschreibung}</td>
@@ -96,4 +97,3 @@
     </table>
 </c:if>
 
-<p>${param.Auswahl}</p>

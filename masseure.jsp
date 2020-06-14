@@ -9,27 +9,28 @@
         password="to0ieto0A"
 />
 
+<div style="text-align:center; width: 100%;">
+    <h2>Liste aller Masseure</h2>
 
-<h2>Liste aller Masseure</h2>
+    <p> Bitte w&auml;hlen Sie einen Masseur aus um mehr Details zu bekommen:</p>
 
-<p> Bitte w&auml;hlen Sie einen Masseur aus um mehr Details zu bekommen:</p>
+    <form method="post" action="index.jsp">
+        <input type="hidden" name="menu" value="masseur_details" />
 
-<form method="post" action="index.jsp">
-    <input type="hidden" name="menu" value="masseur_details" />
+        Masseur:
+        <select name="spezi" size="1">
+            <sql:query var="masseure"
+                       sql="select Vorname, Nachname ,Lizenznummer from Masseur, Person, Angestellter
+                             where Person.SVN = Angestellter.SVN and Angestellter.Angestelltennummer= Masseur.Angestelltennummer" >
+            </sql:query>
 
-    Masseur:
-    <select name="spezi" size="1">
-        <sql:query var="masseure"
-                   sql="select Vorname from Masseur, Person, Angestellter
-                         where Person.SVN = Angestellter.SVN and Angestellter.Angestelltennummer= Masseur.Angestelltennummer" >
-        </sql:query>
+            <c:forEach var="masseur" begin="0" items="${masseure.rows}">
+                <option value="${masseur.Lizenznummer}">${masseur.Vorname} ${masseur.Nachname}</option>
+            </c:forEach>
+        </select>
 
-        <c:forEach var="masseur" begin="0" items="${masseure.rows}">
-            <option value="${masseur.Vorname}">${masseur.Vorname}</option>
-        </c:forEach>
-    </select>
-
-    <button type="submit" class="btn btn-primary">
-        <span class="glyphicon glyphicon-search"></span> Anzeigen...
-    </button>
-</form>
+        <button type="submit" class="btn btn-primary">
+            <span class="glyphicon glyphicon-search"></span> Anzeigen...
+        </button>
+    </form>
+</div>

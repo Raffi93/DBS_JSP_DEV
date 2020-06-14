@@ -11,13 +11,7 @@
 
 	<title>Massage</title>
 
-	<!-- Bootstrap core CSS -->
-	<!--<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/bootstrap-datepicker.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
 
-	<!-- Custom styles for this template -->
-	<!--<link href="css/uni.css" rel="stylesheet">-->
 	<link href="css/massage.css" rel="stylesheet">
 </head>
 
@@ -25,36 +19,36 @@
 <div >
 	<header>
 		<div>
-			<h3 >Massage Studio zur heilenden Hand</h3>
-			<img  src="images/logo.jpg" alt="logo" title="logo" height="60" style="margin-left: 2rem"/>
-
-			<nav>
-				<a  href="index.jsp" id="startmenu">Startseite</a>
+			<div>
+				<h1 style="margin: 1rem 4rem;vertical-align:middle;">Massage Studio zur heilenden Hand <img  src="images/logo.jpg" alt="logo" title="logo" height="90" style="vertical-align:middle;"/></h1>
+			</div>
+			<ul class="nav">
+				<li><a  href="index.jsp" id="startmenu">Startseite</a></li>
 
 				<!-- massage buchen-->
-				<a  href="index.jsp?menu=buchen" id="buchungsmenu">Massage buchen</a>
+				<li><a  href="index.jsp?menu=buchen" id="buchungsmenu">Massage buchen</a></li>
 
 				<!-- B?cherliste ausgeliehen-->
-				<a  href="index.jsp?menu=ausgeliehene_buecher" id="bookmenu">Ausleihe</a>
+				<li><a  href="index.jsp?menu=ausgeliehene_buecher" id="bookmenu">Ausleihe</a></li>
 
 				<!-- Masseurliste -->
-				<a href="index.jsp?menu=masseure" id="masseurmenu">Masseure</a>
+				<li><a href="index.jsp?menu=masseure" id="masseurmenu">Masseure</a></li>
 
 				<!-- Auflistung Angestellte Kunden Vormerkung-->
-				<a  href="index.jsp?menu=Liste" id="listemenu">Auflistung</a>
+				<li><a  href="index.jsp?menu=Liste" id="listemenu">Auflistung</a></li>
 
 				<!-- Kunden oder Angestellte erfassen-->
 				<div class="dropdown">
-					<a href="#">Erfassen</a>
+					<li><a href="#">Erfassen</a></li>
 					<div class="dropdown-content" >
-						<a  href="index.jsp?menu=Angestellter_erfassen">Masseur erfassen</a>
-						<a  href="index.jsp?menu=Kunde_erfassen">Kunde erfassen</a>
+						<li><a  href="index.jsp?menu=Angestellter_erfassen">Masseur erfassen</a></li>
+						<li><a  href="index.jsp?menu=Kunde_erfassen">Kunde erfassen</a></li>
 					</div>
 				</div>
-			</nav>
+			</ul>
 		</div>
 	</header>
-	<main >
+	<main>
 		<c:if test="${!empty param.menu}">
 			<jsp:include page="${param.menu}.jsp" />
 		</c:if>
@@ -63,27 +57,15 @@
 		</c:if>
 	</main>
 
-	<footer>
-		<div >
+	<footer class="footer">
+		<div>
 			<p><a href="#">
 				Kontaktieren Sie uns:
-				<img class="kontakt" src="images/email.jpg" title="contact us" />
+				<img class="kontakt" style="vertical-align:middle;" src="images/email.jpg" title="contact us" />
 			</a>
 			</p>
 		</div>
 	</footer>
 </div>
-
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.slim.min.js"><\/script>')</script>
-<script src="js/vendor/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/bootstrap-datepicker.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/script.js"></script>
 </body>
 </html>

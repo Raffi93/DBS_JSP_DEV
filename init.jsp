@@ -1,4 +1,6 @@
-<h2>Willkommen zur Online Buchungsplattform des Massagestudios zur heilenden Hand</h2>
-	<br />
-	<br />
-	<p>Bitte buchen Sie wir bruachen Geld dringend!!!!!</p>
+<div style="text-align:center; width: 100%;"><h2>Willkommen zur Online Buchungsplattform</h2></div>
+<br />
+<br />
+<div style="text-align:center; width: 100%;">
+	<p>Bitte buchen Sie wir brauchen Geld dringend!!!!!</p>
+</div>
