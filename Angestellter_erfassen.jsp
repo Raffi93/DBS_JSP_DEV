@@ -22,23 +22,23 @@
 
             <tr>
                 <td>SVN</td>
-                <td><input type="number" name="SVN" max="9999999999" min="1111111111" value="${param.SVN}" size="10"></td>
+                <td><input type="number" name="SVN" max="9999999999" min="1111111111" value="${param.SVN}" size="10" required></td>
             </tr>
             <tr>
                 <td>Nachname</td>
-                <td><input type="text" name="NACHNAME" maxlength="80" value="${param.NACHNAME}" size="20"></td>
+                <td><input type="text" name="NACHNAME" maxlength="80" value="${param.NACHNAME}" size="20" required></td>
             </tr>
             <tr>
                 <td>Vorname</td>
-                <td><input type="text" name="VORNAME" maxlength="80" value="${param.VORNAME}" size="20"></td>
+                <td><input type="text" name="VORNAME" maxlength="80" value="${param.VORNAME}" size="20" required></td>
             </tr>
             <tr>
                 <td>Adresse</td>
-                <td><input type="text" name="ADRESSE" maxlength="512" value="${param.ADRESSE}" size="80"></td>
+                <td><input type="text" name="ADRESSE" maxlength="512" value="${param.ADRESSE}" size="80" required></td>
             </tr>
             <tr>
                 <td>Geburtsdatum</td>
-                <td><input type="date" data-date="" data-date-format="yyyy/mm/dd" name="GEBURTSDATUM" value="${param.GEBURTSDATUM}"></td>
+                <td><input type="date" data-date="" data-date-format="yyyy/mm/dd" name="GEBURTSDATUM" value="${param.GEBURTSDATUM}" required></td>
             </tr>
 
             <tr>
@@ -57,7 +57,7 @@
             </tr>
             <tr>
                 <td>Kontonummer</td>
-                <td><input type="number" max="99999999999" min="11111111111" name="Kontonummer" value="${param.Kontonummer}"></td>
+                <td><input type="number" max="99999999999" min="11111111111" name="Kontonummer" value="${param.Kontonummer}" required></td>
             </tr>
             <tr>
                 <td>Qualifikation</td>
@@ -75,11 +75,11 @@
             </tr>
             <tr>
                 <td>Lizenznummer</td>
-                <td><input type="number"  max="999999" min="111111" name="Lizenznummer" value="${param.Lizenznummer}"></td>
+                <td><input type="number"  max="999999" min="111111" name="Lizenznummer" value="${param.Lizenznummer}" required></td>
             </tr>
             <tr>
                 <td>Ausbildungszeit</td>
-                <td><input type="number"  name="Ausbildungszeit" value="${param.Ausbildungszeit}"></td>
+                <td><input type="number"  name="Ausbildungszeit" value="${param.Ausbildungszeit}" required></td>
             </tr>
         </table>
 

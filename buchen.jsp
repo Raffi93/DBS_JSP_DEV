@@ -27,7 +27,7 @@
             <option value="${kunde.Kundennummer}">${kunde.Vorname} ${kunde.Nachname}</option>
         </c:forEach>
     </select>
-    <input type="date" data-date="" data-date-format="yyyy/mm/dd" name="DATUM" value="${param.DATUM}">
+    <input type="date" data-date="" data-date-format="yyyy/mm/dd" name="DATUM" value="${param.DATUM}" required>
     <button type="submit">
         Ausw&auml;hlen
     </button>

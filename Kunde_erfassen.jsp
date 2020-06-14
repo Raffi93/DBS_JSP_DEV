@@ -22,23 +22,23 @@
 
             <tr>
                 <td>SVN</td>
-                <td><input type="number" name="SVN" max="9999999999" value="${param.SVN}" size="10"></td>
+                <td><input type="number" name="SVN" max="9999999999" value="${param.SVN}" size="10" required></td>
             </tr>
             <tr>
                 <td>Nachname</td>
-                <td><input type="text" name="NACHNAME" maxlength="80" value="${param.NACHNAME}" size="20"></td>
+                <td><input type="text" name="NACHNAME" maxlength="80" value="${param.NACHNAME}" size="20" required></td>
             </tr>
             <tr>
                 <td>Vorname</td>
-                <td><input type="text" name="VORNAME" maxlength="80" value="${param.VORNAME}" size="20"></td>
+                <td><input type="text" name="VORNAME" maxlength="80" value="${param.VORNAME}" size="20" required></td>
             </tr>
             <tr>
                 <td>Adresse</td>
-                <td><input type="text" name="ADRESSE" maxlength="512" value="${param.ADRESSE}" size="80"></td>
+                <td><input type="text" name="ADRESSE" maxlength="512" value="${param.ADRESSE}" size="80" required></td>
             </tr>
             <tr>
                 <td>Geburtsdatum</td>
-                <td><input type="date" data-date="" data-date-format="yyyy/mm/dd" name="GEBURTSDATUM" value="${param.GEBURTSDATUM}"></td>
+                <td><input type="date" data-date="" data-date-format="yyyy/mm/dd" name="GEBURTSDATUM" value="${param.GEBURTSDATUM}" required></td>
             </tr>
 
 

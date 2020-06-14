@@ -47,6 +47,3 @@
     </tbody>
 </table>
 <p>${parsedDate}     blub  ${param.DATUM}   </p>
-
-
-
